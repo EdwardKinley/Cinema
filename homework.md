@@ -175,3 +175,31 @@ id |           title           | year | show_time
 ## Extension
 
 1.  Research how to delete multiple entries from your table in a single command.
+
+DELETE FROM movies WHERE id = 1 or id = 3 or id = 7;
+SELECT * from movies;
+-- Deletes Iron Man 1, 2 and 3
+
+DELETE FROM movies WHERE year = 2017;
+SELECT * from movies;
+-- Deletes the (three) 2017 movies
+
+DELETE FROM movies WHERE id = 4 or show_time = '16:50';
+SELECT * from movies;
+-- Deletes the (two) Thor movies
+
+DELETE FROM movies WHERE title LIKE 'Captain%';
+SELECT * from movies;
+-- Deletes the (three) Captain America movies
+
+DELETE FROM movies WHERE id = 6 or year = 2015 and show_time = '17:45' or title = 'Avengers: Infinity War';
+SELECT * from movies;
+-- Deletes the (three) Avengers movies
+
+DELETE FROM movies WHERE year >= 2015;
+SELECT * from movies;
+-- Deletes the three most recent remaining movies
+
+DELETE FROM movies;
+SELECT * from movies;
+-- Deletes the two remaining movies
